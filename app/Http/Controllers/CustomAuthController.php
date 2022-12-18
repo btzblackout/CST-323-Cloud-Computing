@@ -49,7 +49,7 @@ class CustomAuthController extends Controller
         $data = $request->all();
         $check = $this->create($data);
 
-        return redirect("dashboard")->withSuccess('You have signed-in');
+        return redirect("login")->withSuccess('Account created successfully!!');
     }
 
     public function create(array $data)
@@ -61,28 +61,12 @@ class CustomAuthController extends Controller
         ]);
     }
 
-    public function dashboard()
-    {
-        if(Auth::check())
-        {
-            return view('dashboard');
-        }
-
-        return redirect("login")->withSuccess('You are not allowed to access');
-    }
-
     public function signOut()
     {
         Session::flush();
         Auth::logout();
 
         return Redirect('login');
-    }
-
-    public function home()
-    {
-        $name = Auth::USER();
-        return view('auth.home')->with('name', $name);
     }
 
 }

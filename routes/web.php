@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\CustomDBController;
 
 
 /*
@@ -15,10 +16,13 @@ use App\Http\Controllers\CustomAuthController;
 |
 */
 
-Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
-Route::get('login', [CustomAuthController::class, 'index'])->name('login');
+
+Route::get('login', [CustomAuthController::class, 'index'])->name('login'); //landing page.
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
-Route::get('home', [CustomAuthController::class, 'home'])->name('load.home');
+Route::get('home', [CustomDBController::class, 'index'])->name('load.home');
+Route::post('home/action', [CustomDBController::class, 'action'])->name('tabledit.action');
+Route::get('addsong', [CustomDBController::class, 'AddSong'])->name('addsong');
+Route::post('custom-addsong', [CustomDBController::class, 'customAddSong'])->name('addsong.custom');
