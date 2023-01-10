@@ -1,4 +1,4 @@
-runtime: custom
+runtime: PHP
 env: flex
 runtime_config:
     document_root: public
