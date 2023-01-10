@@ -42,6 +42,7 @@
     </div>
 </main>
 <script type = "text/javascript">
+    //For jQuery Tabledit.
     $(document).ready(function(){
         $.ajaxSetup({
             headers:{
