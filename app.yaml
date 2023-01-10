@@ -21,7 +21,7 @@ env_variables:
     # Put production environment variables here.
     APP_DEBUG: true
     APP_ENV: production
-    APP_KEY: P48WfSnST3iwJyHQDgAH4wNStzfm1m/kPp9shtuNHq4=
+    APP_KEY: base64:dRFOWrO4q4psPgtJmLi3+zUIzC7POHjzubyZ0MEvfuY=
     APP_NAME: "CloudComputingApp"
 
     LOG_LEVEL: debug
