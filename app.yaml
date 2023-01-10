@@ -1,4 +1,4 @@
-runtime: PHP73
+runtime: php73
 env: flex
 runtime_config:
     document_root: public
